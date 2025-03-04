@@ -14,7 +14,7 @@ echo "$FILES" | while IFS= read -r file && [[ -n "$file" ]]; do
         continue
     fi
 
-    size="$(du -s "$dest" | cut -f1)"
+    size="$(du -s "$dest" | awk '{print $1 * 1024}')"
 
     echo "$METRIC{file=\"$file\"} $size"
 

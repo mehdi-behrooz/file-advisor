@@ -11,5 +11,6 @@ services:
         /etc/asdf/asdf
         /var/log/
         /var/lib/docker/
+        /var/lib/docker/overlay2/
     ports:
       - 8080:8080
