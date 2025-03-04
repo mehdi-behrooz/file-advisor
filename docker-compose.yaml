@@ -1,0 +1,15 @@
+services:
+  file-advisor:
+    build: .
+    container_name: file-advisor
+    volumes:
+      - /:/host:ro
+    environment:
+      INTERVAL: 30
+      FILES: |
+        /etc/
+        /etc/asdf/asdf
+        /var/log/
+        /var/lib/docker/
+    ports:
+      - 8080:8080
